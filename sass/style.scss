@@ -1,0 +1,29 @@
+/* GENERALES */
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none !important;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+ul {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 !important;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto auto 320px;
+}
+
+/* END GENERALES */
+@import "header.scss";
+@import "main.scss";
+@import "footer.scss";

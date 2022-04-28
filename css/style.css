@@ -1,0 +1,665 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none !important;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+ul {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 !important;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto auto 320px;
+}
+
+/* HEADER */
+
+header {
+    background-color: rgb(91, 171, 84);
+    display: flex;
+    flex-direction: column;
+}
+
+.navSuperior {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.logo {
+    transition: all 0.25s;
+}
+
+.logo:hover {
+    transform: scale(0.95);
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.logo a:hover {
+    color: white;
+}
+
+.logo img {
+    height: 75px;
+    border-radius: 50%;
+}
+
+.logo h1 {
+    display: none;
+    margin-left: 5px !important;
+    font-weight: 600;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buscador input{
+    width: 9rem;
+    padding-left: 7px;
+    line-height: 25px;
+    background: white;
+    color: rgb(99, 173, 88);
+    border: none;
+    border-radius: 18px;
+    margin-right: 5px;
+}
+
+.buscador input:hover {
+    background: rgb(226, 226, 226);
+}
+
+.buscador input:focus {
+    background: rgb(90, 90, 90);
+    color: white;
+    outline: none;
+}
+
+.buscador a {
+    transition: all 0.25s;
+}
+
+.buscador a:hover {
+    color: rgb(226, 226, 226);
+    transform: scale(0.95);
+}
+
+.buscador a:active {
+    color: rgb(27, 27, 27);
+}
+
+.menuHamburguesa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+}
+ 
+.menuHamburguesa:active {
+    color: rgb(27, 27, 27);
+}
+
+input#menu {
+    display: none;
+}
+
+input#menu:checked ~ .seccionesContainer {
+    display: block;
+} 
+  
+.seccionesContainer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 200px;
+    background-color: rgb(91, 171, 84);
+}
+  
+.cerrarMenu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: rgb(27, 27, 27);
+}
+
+.cerrarMenu:active {
+    color: rgb(230, 230, 230);
+}
+
+.secciones {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.secciones li {
+    display: flex;
+    font-size: 24px;
+    margin: 5px 0;
+    padding: 0 8px;
+    background-color: rgb(163, 224, 174);
+    border-radius: 15px;
+}
+
+.secciones li:active {
+    background-color: rgb(48, 48, 48);
+}
+
+.secciones li a {
+    color: rgb(48, 48, 48);
+}
+
+.secciones li a:active {
+    color: rgb(230, 230, 230);
+}
+
+#seccionCarrito {
+    padding: 9px;
+    border-radius: 50%;
+}
+
+.navInferior {
+    display: flex;
+    padding: 5px;
+    border-top: 3px solid rgb(73, 73, 73);
+    border-bottom: 3px solid rgb(73, 73, 73);
+}
+
+.btn {
+    color: white !important;
+    border: 1px solid rgb(73, 73, 73) !important;
+}
+
+.dropdown-item:active {
+    background-color: rgb(163, 224, 174) !important;
+}
+
+.categoriasContainer {
+    display:none;
+}
+
+header a {
+    color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+
+    body {
+        display: grid;
+        grid-template-rows: auto auto 220px;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .logo h1 {
+        display: flex;
+        display: inline-block;
+        font-size: 30px;
+        margin-left: 5px;
+    }
+
+    .buscador input {
+        min-width: 200px;
+        line-height: 28px;
+        font-size: 15px;
+    }
+
+    .menuHamburguesa {
+    margin-right: 8px;
+    }
+
+    .navInferior {
+        padding: 0;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .categoriasContainer {
+        display: block;
+    }
+
+    .categorias {
+        display: flex;
+        width: calc(100vw - 19px);
+        justify-content: space-evenly;
+    }
+    
+    .categorias li {
+        display: flex;
+        font-size: 12px;
+        font-weight: 600;
+        margin: 10px 15px;
+        color: white;
+    }
+    
+    .categorias li a {
+        transition: all 0.25s;
+    }
+    
+    .categorias li a:hover {
+        color: rgb(226, 226, 226);
+        transform: scale(0.95);
+    }
+    
+    .categorias li a:active {
+        color: rgb(27, 27, 27);
+    }
+
+    .categorias li {
+        font-size: 16px;
+    }
+    
+}
+
+@media screen and (min-width:1100px) {
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+}
+
+/* END HEADER */
+
+
+/* MAIN INDEX */
+
+.division {
+    background: linear-gradient(rgb(87, 214, 110), rgb(163, 224, 174));
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.productos {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.productos article {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px 20px;
+    border: 3px solid rgb(73, 73, 73);
+    border-radius: 5px;
+    transition: all 0.25s;
+}
+
+.productos article:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+.productos img {
+    border-bottom: 3px solid rgb(73, 73, 73);
+    height: 190px;
+}
+
+.productos h4 {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 5px !important;
+    font-weight: 600;
+}
+
+.productos h6 {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 5px !important;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+    
+    .productos img {
+        height: 220px;
+    }
+
+    .productos h4 {
+        font-size: 18px;
+    }
+
+    .productos h6 {
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (min-width: 1100px) {
+
+    .productos img {
+        height: 300px;
+    }
+
+    .productos h4 {
+        font-size: 22px;
+    }
+
+    .productos h6 {
+        font-size: 18px;
+    }
+}
+
+/* END MAIN INDEX */
+
+
+/* MAIN CUENTA */
+
+.cuentaContainer {
+    display: flex;
+    justify-content: center;
+    background-image: url(Img/fondo.jpeg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.cuenta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(163, 224, 174);
+}
+
+.cuentaForm legend {
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid rgb(48, 48, 48);
+}
+
+.cuentaForm input {
+    padding-left: 5px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 300px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid rgb(90, 90, 90);
+}
+
+.cuentaForm input:hover {
+    background: rgb(226, 226, 226);
+}
+
+.cuentaForm input:focus {
+    background: rgb(90, 90, 90);
+    color: white;
+    outline: none;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonContainer button {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.buttonContainer button:hover {
+    transform: scale(0.95);
+}
+
+.cuenta h4 {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.cuenta a {
+    color: white
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+
+    .cuenta {
+        width: 300px;
+        margin: 30px;
+        padding: 30px 40px;
+    }
+
+    .cuentaForm legend {
+        font-size: 25px;
+    }
+
+    .buttonContainer button {
+        font-size: 18px;
+    }
+
+    .cuenta h4 {
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (min-width: 1100px) {
+
+    .cuenta {
+        width: 350px;
+        padding: 50px 40px;
+    }
+
+    .cuentaForm legend {
+        font-size: 28px;
+    }
+
+    .cuentaForm input {
+        height: 28px;
+    }
+
+    .buttonContainer button {
+        font-size: 20px;
+    }
+
+    .cuenta h4 {
+        font-size: 20px;
+    }
+}
+/* END MAIN CUENTA */
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(91, 171, 84);
+    color: white;
+    padding-top: 15px;
+}
+
+.footerMetodos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 15px 0 15px 20px;
+}
+
+footer h4 {
+    font-size: 15px;
+}
+
+.pagos {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagos h4 {
+    font-weight: 600;
+}
+
+.pagos img {
+    margin-top: 5px;
+    height: 25px;
+}
+
+.envios {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.envios h4 {
+    font-weight: 600;
+}
+
+.envios img {
+    margin-top: 5px;
+    height: 25px;
+}
+
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.contacto h4 {
+    font-weight: 600;
+}
+
+.contacto ul li {
+    display: flex;
+    align-items: center;
+}
+
+.contacto ul li i {
+    padding-right: 5px;
+}
+
+.redesSociales {
+    display: flex;
+    flex-direction: column;
+} 
+
+.redesSociales h4 {
+    font-weight: 600;
+}
+
+.redesSociales ul {
+    display: flex;
+}
+
+.redesSociales ul li {
+    font-size: 30px;
+    margin: 0 5px;
+    color: white;
+}
+
+.redesSociales ul li a {
+    color: white;
+    transition: all 0.25s;
+}
+
+.redesSociales ul li a:hover {
+    transform: scale(0.95);
+}
+
+.redesSociales ul li a:active {
+    color: rgb(48, 48, 48);
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+    
+    footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 0;
+    }
+
+    footer h4 {
+        font-size: 18px;
+    }
+
+    .footerInfo {
+        justify-content: center;
+        margin: 0;
+        padding-left: 30px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+
+    footer h4 {
+        font-size: 22px;
+    }
+
+    .footerMetodos img {
+        height: 30px;
+    }
+
+    .footerInfo li {
+        font-size: 20px;
+    }
+}
+
+/* END FOOTER */
